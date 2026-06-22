@@ -69,6 +69,27 @@ If they adopt it, every note is one of three types — each a little frontmatter
 Keep it light — a starting shape, not a form to fill. The part that must survive even if they rename
 everything: **preserve their exact words in A, attribute in B, mark AI prose in C.**
 
+## Privacy tiers — set these before you ingest (suggest, let them choose)
+
+A second brain only works if it can hold the private and the public in one place without leaking the
+private — so settle this **before you pull anything in.** Propose the scale below, explain what each
+level means, and **ask them to adopt or adjust it** — suggest, don't impose. Then **tag every item with
+its tier as it lands**, and gate what you publish or expose to other agents by tier.
+
+Friendly labels backed by a `depth: 1–5` number — simple now, and it lines up with the fuller template
+later (higher = more private):
+
+- **1 · public** — safe to publish anywhere or hand to any agent.
+- **2 · shareable** — fine to share with trusted people or agents; not broadcast.
+- **3 · personal** — the everyday default: lives in the brain, not exposed outward without asking.
+- **4 · private** — sensitive; stays local, never sent to an external agent or a shareable context.
+- **5 · sealed** — rawest interiority, the stuff they'd never share; never surfaced outside the brain,
+  gated even in agent-to-agent use.
+
+When unsure, tier *up* (more private) and keep them in the loop. And **secrets themselves** — keys,
+passwords — don't belong in the brain as plain text: store a pointer and keep the secret in a vault or
+`.env`.
+
 ## The setup wizard — interview before you build
 
 Use structured questions if your tool has them; otherwise ask conversationally, a few at a time.
@@ -78,6 +99,10 @@ exact words):
 **Offer the note structure early.** Once you know roughly who they are, present the A/B/C convention
 (the section above), show a one-line example of each, and ask whether they want to adopt it, tweak it,
 or use their own. Settle it before you capture anything — it shapes every note you'll create.
+
+**Settle privacy tiers before you ingest.** The same way: present the tier scheme (section above),
+explain each level, and let them adopt or adjust it — *before* any bulk read or import, so nothing
+sensitive gets pulled in ungated. Then tag each item's tier as it lands.
 
 1. **Purpose** — what do they want this brain to *do*? What's a clear win one month from now?
 2. **Who they are & what they do** — their work and world (creator, coach, founder, researcher,
@@ -102,13 +127,16 @@ or use their own. Settle it before you capture anything — it shapes every note
    reasoning about structure. If it doesn't, **stage it** — read in batches timed to when their
    limit resets (a Pro ~5-hour window, overnight, or week's end) so the ingestion spreads across
    refreshes instead of exhausting one session. Reading everything at once with the most expensive
-   model is the one move that reliably burns a limited plan in a single sitting.
+   model is the one move that reliably burns a limited plan in a single sitting. Privacy first: confirm
+   tiers are set (above) before any bulk read, and tag each item's tier as it lands, so a big import
+   doesn't pull sensitive material in ungated.
 7. **Projects** — their current projects, name + one line each.
 8. **Personal life context** — relationships, health, location, life chapters: how much of their
    actual life do they want it to hold and help with?
-9. **Privacy layers** — what feels *too private to share*? Set tiers from public → sealed, and use
-   them to gate what you publish or expose to other agents. When in doubt, keep it in the loop with
-   them.
+9. **Privacy tiers (confirm + refine)** — you offered the tier scheme early (above) and have been
+   tagging as you go; now, with their sources and life context in view, confirm the default tier for
+   each kind of content and flag any especially sensitive areas. When in doubt, tier *up* and keep
+   them in the loop.
 10. **Capture habit** — how will they feed it day to day (voice, a phone inbox, paste)? Lock in one.
 
 ## Then close the loop once
