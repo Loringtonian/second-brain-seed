@@ -48,11 +48,36 @@ them however their platform allows):
 - **Capture habits** — the brain is only as good as what flows in. Voice dictation is the
   highest-bandwidth input; help them build a habit that sticks.
 
+## Note structure — the A/B/C convention (suggest it, let them choose)
+
+One distinction does more work than any other: **who authored a note.** During setup, **propose** this
+convention, show a one-line example of each, and **ask whether they want to adopt it, adjust it, or use
+their own** — suggest, don't impose. It's a strong default (consistent retrieval, clean attribution,
+always knowing what's *their* thinking vs the AI's), so explain why; but it's their brain.
+
+If they adopt it, every note is one of three types — each a little frontmatter plus a simple body:
+
+- **Template A — their own thinking.** Their words, kept **verbatim**. Frontmatter: `type: A`, `title`,
+  `date`, `tags`. Body: a one-line summary · the original text, untouched · links to related notes.
+- **Template B — someone else's content.** Always **attributed**. Frontmatter: `type: B`, `title`,
+  `date`, `source` (author + link/citation), `tags`. Body: the captured material · one line on why it
+  matters to them.
+- **Template C — AI-synthesized.** Prose you wrote *from* their notes, clearly marked as AI-generated.
+  Frontmatter: `type: C`, `title`, `date`, `sources` (the notes it drew from), `tags`. Body: the
+  synthesized prose.
+
+Keep it light — a starting shape, not a form to fill. The part that must survive even if they rename
+everything: **preserve their exact words in A, attribute in B, mark AI prose in C.**
+
 ## The setup wizard — interview before you build
 
 Use structured questions if your tool has them; otherwise ask conversationally, a few at a time.
 Walk these axes, writing answers into the config and an identity doc as you go (preserve their
 exact words):
+
+**Offer the note structure early.** Once you know roughly who they are, present the A/B/C convention
+(the section above), show a one-line example of each, and ask whether they want to adopt it, tweak it,
+or use their own. Settle it before you capture anything — it shapes every note you'll create.
 
 1. **Purpose** — what do they want this brain to *do*? What's a clear win one month from now?
 2. **Who they are & what they do** — their work and world (creator, coach, founder, researcher,
