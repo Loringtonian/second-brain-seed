@@ -8,6 +8,10 @@ are, what they do, and how they think.
 A second brain rewards what you put in: the more of your thinking, context, and life you feed it,
 the more it can do for you. So the first session isn't filing — it's getting to know each other.
 
+> **Already set up?** If this repo already holds real content and a core/identity doc the brain loads,
+> you're past first-run — load that core and operate the brain; don't re-onboard. The rest of this file
+> is the *first-run* brief.
+
 ## Before you begin (tell the user this first)
 
 For the best result, have them turn their stack up before you go deep: **the smartest model
@@ -96,6 +100,12 @@ Use structured questions if your tool has them; otherwise ask conversationally, 
 Walk these axes, writing answers into the config and an identity doc as you go (preserve their
 exact words):
 
+**First, one brain or two?** Ask up front: is this brain **personal**, **professional**, or do they
+want **two separate brains** (e.g., work + personal) kept firewalled? If one, note its scope and shape
+it to that. If two, set up each as its own folder/brain — run this setup once per brain, keep them
+separate, and where something belongs in both give it **one home and a reference in the other** (not a
+copy). The note structure and privacy tiers apply per brain.
+
 **Offer the note structure early.** Once you know roughly who they are, present the A/B/C convention
 (the section above), show a one-line example of each, and ask whether they want to adopt it, tweak it,
 or use their own. Settle it before you capture anything — it shapes every note you'll create.
@@ -144,6 +154,21 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
 Before you finish, run the core loop live: ask for **one real thought on their mind today**,
 capture it in their words, file it, and point out a connection — even to what you just learned
 about them. Then tell them: *that was the loop; everything else is that loop, deepened.*
+
+## Make it stick (so it survives the session)
+
+The first session's decisions are worthless if they evaporate. Before you wrap, write the durable ones
+into a **persistent core** the brain loads every session — on Claude Code / Desktop that's `CLAUDE.md`
+(or a short identity/config doc it `@`-imports):
+
+- Record **who they are** (the identity you gathered), their **comms style**, the **note-structure
+  convention** they chose, their **privacy scheme**, and whether this is one brain or two — so every
+  future session honors them, not just this one.
+- Then **repoint `CLAUDE.md`** to load that core instead of this setup brief, so the next session
+  *operates* the brain rather than re-running onboarding. Keep `SEED.md` as the first-run record.
+
+After this, a fresh session opens straight into *their* brain — its rules, its voice, its tiers already
+loaded.
 
 ## Grow organically
 
