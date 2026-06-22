@@ -14,7 +14,9 @@ For the best result, have them turn their stack up before you go deep: **the sma
 available, the largest context window, the highest thinking / reasoning budget, maximum effort,
 and plan mode on** if their tool has it. Setup is a thinking task — you want to reason about the
 whole shape of their brain before you build any of it. If they're on a small or fast model, say so
-and suggest they switch.
+and suggest they switch. (On a limited plan like Claude Pro, keep the strong model for the
+*thinking* — reasoning about structure is cheap; mechanically reading a large archive is what burns
+the budget. See the "budget before you bulk-read" note in step 6 before you read anything big.)
 
 ## First, learn your environment
 
@@ -66,6 +68,16 @@ exact words):
    podcasts, messages, X, email, calendar, old exports? And the key fork: **do they want to
    front-load the work** — bulk-ingest now and calibrate your judgment on small batches first — **or
    dump-and-go**, capturing lazily and searching when needed? Build accordingly.
+   **Budget before you bulk-read.** Ask what AI plan they're on (e.g. Claude Pro vs Max, or a
+   pay-as-you-go API budget) — that sets how much you can read before you hit a limit. Then size the
+   source up: scan the files if you can reach them (count + bytes → rough tokens ≈ text bytes ÷ 4),
+   or ask them for a rough size if you can't. Compare it to the budget and say it plainly — e.g.
+   "reading your whole Drive is roughly N tokens, about X% of a Pro session window; I'd burn it in
+   one go." If it fits, read it with a cheap/fast model in batches and save the expensive model for
+   reasoning about structure. If it doesn't, **stage it** — read in batches timed to when their
+   limit resets (a Pro ~5-hour window, overnight, or week's end) so the ingestion spreads across
+   refreshes instead of exhausting one session. Reading everything at once with the most expensive
+   model is the one move that reliably burns a limited plan in a single sitting.
 7. **Projects** — their current projects, name + one line each.
 8. **Personal life context** — relationships, health, location, life chapters: how much of their
    actual life do they want it to hold and help with?
