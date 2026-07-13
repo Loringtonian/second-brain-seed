@@ -1,5 +1,7 @@
 # Second Brain Seed
 
+> **Here for a session with Lorin?** Book at [loringtonian.github.io/links](https://loringtonian.github.io/links/).
+
 One prompt that grows into your own AI second brain. No 130-file template to strip down — just a
 seed an agent reads to build a personal knowledge base shaped to *you*.
 
