@@ -26,7 +26,8 @@ the budget. See the "budget before you bulk-read" note in step 6 before you read
 
 Ask what they're running you through — it decides which mechanisms you have:
 - **Claude Code / Claude Desktop** — you have auto-loaded config, slash-command skills, hooks, and
-  structured questions. Use them.
+  structured questions. Use them. (Claude Code also runs in the browser at claude.ai/code against a
+  GitHub repo — no terminal needed; config and skills load there, hooks don't.)
 - **Codex, Cursor, or another coding agent** — config won't auto-load; read the entry files
   yourself and run operations by hand.
 - **Hermes, a chat bridge, or OpenRouter with another model (including non-Anthropic)** — adapt:
@@ -46,7 +47,10 @@ them however their platform allows):
 - **Templates by authorship** — tag every note by who made it: the owner's own thinking (kept
   *verbatim*), someone else's content (always attributed), or AI-synthesized prose from their notes.
 - **Named operations** — package repeatable jobs (capture a brain dump, find duplicates, weekly
-  review) as reusable skills/commands once you've watched one happen twice.
+  review) as reusable skills/commands once you've watched one happen twice. One worked example ships
+  in `.claude/skills/` — the `/nano-banana-flash` + `/nano-banana-pro` image-generation pair (add a
+  free `GEMINI_API_KEY` to `.env` to use them); copy their shape when you package this person's own
+  operations.
 - **Privacy layers** — every item gets a sensitivity level, so the brain can hold raw interiority
   and public ideas in one system without leaking the private ones.
 - **Capture habits** — the brain is only as good as what flows in. Voice dictation is the
@@ -166,9 +170,32 @@ into a **persistent core** the brain loads every session — on Claude Code / De
   future session honors them, not just this one.
 - Then **repoint `CLAUDE.md`** to load that core instead of this setup brief, so the next session
   *operates* the brain rather than re-running onboarding. Keep `SEED.md` as the first-run record.
+- On Claude Code, also record the durable decisions in its **auto memory** (on by default — it loads
+  its `MEMORY.md` index every session). Division of labor: `CLAUDE.md` / the core doc carries the
+  *owner's instructions*; memory accumulates *your learnings about them* — corrections, preferences
+  discovered mid-session, what worked. Memory lives on the machine
+  (`~/.claude/projects/<project>/memory/`), not in the repo — it won't travel with a clone, which is
+  one more reason the durability choice below matters.
 
 After this, a fresh session opens straight into *their* brain — its rules, its voice, its tiers already
 loaded.
+
+## Make it durable — version it from day one
+
+A brain that holds someone's thinking should never be one crash or one bad edit from gone. Set this
+up early — ideally before the first real note lands:
+
+- **Check for `git`** (`git --version`); if it's missing, offer to install it (macOS:
+  `xcode-select --install`; Windows: git-scm.com; Linux: the distro package manager).
+- **`git init` the brain and commit as you go** — every ingestion or structural change gets a commit.
+  History doubles as an undo button and a record of how the brain grew.
+- **Offer a GitHub home.** Suggest a GitHub account and the `gh` CLI (`gh auth login`), then let them
+  choose — and record the choice in the core doc:
+  - **Private GitHub remote** — off-machine backup, and it unlocks running the brain from the browser
+    at claude.ai/code (no terminal needed; skills work there, hooks don't). Remind them everything
+    rides along, including the most private tiers — so private repo, their own account, their call.
+  - **Local-only + a backup habit** — most private; with no remote the laptop is the single copy, so
+    pair it with something real (an external drive, a synced folder).
 
 ## Grow organically
 

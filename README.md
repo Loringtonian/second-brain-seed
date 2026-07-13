@@ -22,6 +22,9 @@ things), and grows the structure around what you actually put in.
 That's it. Answer a few questions, capture one real thought, and you have a working brain that grows
 from there.
 
+The seed ships one example skill pair — `/nano-banana-flash` and `/nano-banana-pro` (image
+generation; add a free `GEMINI_API_KEY` to `.env`) — as the pattern for growing your own.
+
 ## Where it can grow
 
 `INSPIRATION.md` links a fully built-out second brain — routers, templates, dozens of skills, hooks.
