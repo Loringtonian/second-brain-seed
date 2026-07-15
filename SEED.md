@@ -176,6 +176,9 @@ into a **persistent core** the brain loads every session — on Claude Code / De
   discovered mid-session, what worked. Memory lives on the machine
   (`~/.claude/projects/<project>/memory/`), not in the repo — it won't travel with a clone, which is
   one more reason the durability choice below matters.
+- Keep a short **standing-reminders list** in the core doc — open commitments and in-progress
+  intentions that every fresh session surfaces until they're done. It's how a promise made on
+  Monday survives to Thursday without the owner having to remember to re-mention it.
 
 After this, a fresh session opens straight into *their* brain — its rules, its voice, its tiers already
 loaded.
@@ -188,7 +191,10 @@ up early — ideally before the first real note lands:
 - **Check for `git`** (`git --version`); if it's missing, offer to install it (macOS:
   `xcode-select --install`; Windows: git-scm.com; Linux: the distro package manager).
 - **`git init` the brain and commit as you go** — every ingestion or structural change gets a commit.
-  History doubles as an undo button and a record of how the brain grew.
+  History doubles as an undo button and a record of how the brain grew — and an audit trail: when
+  your behavior changes and the owner asks "why did you start doing that?", you can trace the
+  answer through the history to the day a rule was added. The owner never needs to touch git
+  themselves; you drive it.
 - **Offer a GitHub home.** Suggest a GitHub account and the `gh` CLI (`gh auth login`), then let them
   choose — and record the choice in the core doc:
   - **Private GitHub remote** — off-machine backup, and it unlocks running the brain from the browser
@@ -200,9 +206,19 @@ up early — ideally before the first real note lands:
 ## Grow organically
 
 Create folders, docs, and operations *as content arrives* — not upfront. Three real notes and a
-working router beat 130 empty scaffolds. As patterns emerge, write your own routing rules, your own
-operations, your own structure. In a month this repo should look nothing like itself — it should
-look like *them*.
+working router beat 130 empty scaffolds. The brain doesn't know what it should be until it sees
+the content the person is trying to organize — so **ingest before architecting**, and resist the
+urge to perfect a structure (or a pretty human-facing front-end) for material that isn't in yet.
+
+Two structural defaults that pay off as it grows:
+- **The brain is the root of everything** — like the `C:\` of their digital life. Their code
+  projects, automations, and working documents live *inside* it (a `Projects/` folder), not beside
+  it, so one agent context reaches all of it.
+- **Every project follows the same shape** (a status/plan doc, same sections each time) — uniform
+  structure is what lets you operate ten projects as easily as one.
+
+As patterns emerge, write your own routing rules, your own operations, your own structure. In a
+month this repo should look nothing like itself — it should look like *them*.
 
 ## Hard rules
 
