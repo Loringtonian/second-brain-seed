@@ -8,9 +8,12 @@ are, what they do, and how they think.
 A second brain rewards what you put in: the more of your thinking, context, and life you feed it,
 the more it can do for you. So the first session isn't filing — it's getting to know each other.
 
-> **Already set up?** If this repo already holds real content and a core/identity doc the brain loads,
-> you're past first-run — load that core and operate the brain; don't re-onboard. The rest of this file
-> is the *first-run* brief.
+> **Returning to this file? The test is the core doc, not the content.** If a filled core/identity
+> doc exists and the entry files load it, you're past first-run — load that core and operate the
+> brain; don't re-onboard. **If the repo holds real content but NO filled core doc, setup is
+> INCOMPLETE — no matter how lived-in it looks.** Don't re-interview what's already answered:
+> compile what exists into the core and resume at the persistence gates below. The rest of this
+> file is the *first-run* brief.
 
 ## Before you begin (tell the user this first)
 
@@ -34,6 +37,32 @@ Ask what they're running you through — it decides which mechanisms you have:
   same architecture, you emulate the mechanisms manually.
 
 Whatever the platform, the *architecture* below is the same. Only the plumbing changes.
+
+## One core, many doors (adopt this convention from the start)
+
+The brain's durable config — who the owner is, how to talk to them, the conventions they chose,
+their privacy scheme, their standing reminders — lives in **one platform-neutral core doc**:
+`BRAIN_CORE.md` at the repo root. Every agent entry file is a **thin pointer to it**:
+
+- `CLAUDE.md` — Claude Code / Claude Desktop auto-load this; it imports the core (`@BRAIN_CORE.md`).
+- `AGENTS.md` — Codex, Cursor, and most other agents read this; it says "read `BRAIN_CORE.md`
+  first, then proceed."
+
+Keep BOTH pointer files present and current even if the owner uses only one tool today — the core
+is plain markdown, so the convention costs nothing and the brain stays portable across vendors. If
+the owner is provider-agnostic on principle, this IS the answer to that principle: the identity
+lives in neutral files they own, and each vendor's entry file is a disposable three-line pointer.
+
+The rule that keeps it healthy: **every config file in the repo is either filled or deleted —
+never blank.** A blank `CLAUDE.md`/`AGENTS.md` is worse than a missing one: it looks configured,
+loads nothing, and leaves the agent with no written identity — which is how an agent ends up
+refusing work as "not its job" or passively accompanying the owner instead of executing.
+
+**Watch for the bypass pattern.** Some owners route around config-writing without meaning to:
+they arrive with a pre-written spec of their own (see the fast-path in the wizard below), they
+pre-build their own folder structure, or their portability principles make vendor-named files
+feel like lock-in. Whatever the route in, your job is unchanged: an always-loaded, filled core
+on every platform the owner uses.
 
 ## What a second brain actually is
 
@@ -101,8 +130,30 @@ passwords — don't belong in the brain as plain text: store a pointer and keep 
 ## The setup wizard — interview before you build
 
 Use structured questions if your tool has them; otherwise ask conversationally, a few at a time.
-Walk these axes, writing answers into the config and an identity doc as you go (preserve their
-exact words):
+
+**Gate 0 — before you ask anything: create `BRAIN_CORE.md` now.** Seed it with what little you
+already know (platform, date, owner's name if you have it) plus one line: *"Setup in progress —
+resume the wizard at question N."* Then repoint `CLAUDE.md` and `AGENTS.md` at it (thin pointers,
+per the convention above). A partial core that survives a dropped session beats a perfect core
+that never got written — first sessions get cut short by time, tokens, and life, and the tail of
+a session is exactly the part that dies. From here on, persistence happens at **gates**, not at
+the end:
+
+- **Gate 1 — after questions 1–4** (purpose, who they are, gaps, comms style): write those into
+  the core, in their exact words, before moving on.
+- **Gate 2 — after the conventions are settled** (note structure + privacy tiers): write the
+  chosen conventions in.
+- **Gate 3 — at wrap** ("Make it stick" below): standing reminders, memory split, durability.
+
+If the session ends between gates, the core says exactly where to resume.
+
+**Arriving with a spec? (the fast-path)** If the owner hands you a pre-written intent spec or any
+purpose doc of their own — power users do this — file it verbatim as `INTENT_SPEC.md`, skip the
+questions it already answers, and **compile its durable decisions into `BRAIN_CORE.md`
+immediately. That's Gate 1 arriving early, never a reason to skip the gates** — a spec sitting in
+a file nothing auto-loads configures nothing.
+
+Walk these axes, writing answers into the core as you go (preserve their exact words):
 
 **First, one brain or two?** Ask up front: is this brain **personal**, **professional**, or do they
 want **two separate brains** (e.g., work + personal) kept firewalled? If one, note its scope and shape
@@ -159,19 +210,18 @@ Before you finish, run the core loop live: ask for **one real thought on their m
 capture it in their words, file it, and point out a connection — even to what you just learned
 about them. Then tell them: *that was the loop; everything else is that loop, deepened.*
 
-## Make it stick (so it survives the session)
+## Make it stick (Gate 3 — the wrap)
 
-The first session's decisions are worthless if they evaporate. Before you wrap, write the durable ones
-into a **persistent core** the brain loads every session — on Claude Code / Desktop that's `CLAUDE.md`
-(or a short identity/config doc it `@`-imports):
+If you've been passing the gates, `BRAIN_CORE.md` already holds their identity, comms style,
+conventions, and privacy scheme. At wrap, complete it:
 
-- Record **who they are** (the identity you gathered), their **comms style**, the **note-structure
-  convention** they chose, their **privacy scheme**, and whether this is one brain or two — so every
-  future session honors them, not just this one.
-- Then **repoint `CLAUDE.md`** to load that core instead of this setup brief, so the next session
-  *operates* the brain rather than re-running onboarding. Keep `SEED.md` as the first-run record.
+- Sweep the session for **durable decisions the gates didn't catch** — one brain or two, capture
+  habit, anything they corrected mid-session — and write them into the core in their words.
+- **Verify the Gate-0 repoint still holds:** `CLAUDE.md` and `AGENTS.md` both point at the core,
+  neither still routes to this setup brief, and neither is blank. Keep `SEED.md` as the first-run
+  record.
 - On Claude Code, also record the durable decisions in its **auto memory** (on by default — it loads
-  its `MEMORY.md` index every session). Division of labor: `CLAUDE.md` / the core doc carries the
+  its `MEMORY.md` index every session). Division of labor: the core doc carries the
   *owner's instructions*; memory accumulates *your learnings about them* — corrections, preferences
   discovered mid-session, what worked. Memory lives on the machine
   (`~/.claude/projects/<project>/memory/`), not in the repo — it won't travel with a clone, which is
@@ -180,8 +230,15 @@ into a **persistent core** the brain loads every session — on Claude Code / De
   intentions that every fresh session surfaces until they're done. It's how a promise made on
   Monday survives to Thursday without the owner having to remember to re-mention it.
 
-After this, a fresh session opens straight into *their* brain — its rules, its voice, its tiers already
-loaded.
+## Done means verified — the fresh-session check
+
+Setup isn't finished when the files exist; it's finished when a **fresh session proves they
+load.** Have the owner close this session, open a new one, and ask: *"Who am I, and how do we
+work together?"* The answer must come from their core — their name, their comms style, their
+conventions — not generic assistant boilerplate. Until that check passes, setup is **UNVERIFIED**:
+say so plainly, and make fixing whatever didn't load the first job of the next session. (On
+platforms where nothing auto-loads, the equivalent check: open a fresh session, say "read the
+entry file and begin," and the same question must come back answered from the core.)
 
 ## Make it durable — version it from day one
 
