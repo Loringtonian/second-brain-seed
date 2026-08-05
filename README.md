@@ -25,7 +25,10 @@ That's it. Answer a few questions, capture one real thought, and you have a work
 from there.
 
 The seed ships one example skill pair — `/nano-banana-flash` and `/nano-banana-pro` (image
-generation; add a free `GEMINI_API_KEY` to `.env`) — as the pattern for growing your own.
+generation) — as the pattern for growing your own. **Optional and off by default:** it's the one
+skill in the box that calls a third-party API (Google Gemini; needs a `GEMINI_API_KEY` in `.env`).
+Everything else runs against your own AI subscription and your local files — nothing leaves your
+machine unless you opt in.
 
 ## Where it can grow
 
