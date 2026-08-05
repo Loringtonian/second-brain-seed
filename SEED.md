@@ -85,12 +85,9 @@ them however their platform allows):
   *verbatim*), someone else's content (always attributed), or AI-synthesized prose from their notes.
 - **Named operations** — package repeatable jobs (capture a brain dump, find duplicates, weekly
   review) as reusable skills/commands once you've watched one happen twice. One worked example ships
-  in `.claude/skills/` — the `/nano-banana-flash` + `/nano-banana-pro` image-generation pair. **It
-  is OPTIONAL and OFF by default, and it is the one non-local thing in this box:** using it sends
-  the image prompt to Google's Gemini API (a third party). Only enable it if the owner explicitly
-  wants that trade — everything else in the seed runs against their own AI subscription alone.
-  Copy its *shape* when you package this person's own operations; their first real skills should
-  be local ones.
+  in `.claude/skills/` — the `/nano-banana-flash` + `/nano-banana-pro` image-generation pair (add a
+  free `GEMINI_API_KEY` to `.env` to use them); copy their shape when you package this person's own
+  operations.
 - **Privacy layers** — every item gets a sensitivity level, so the brain can hold raw interiority
   and public ideas in one system without leaking the private ones.
 - **Capture habits** — the brain is only as good as what flows in. Voice dictation is the
