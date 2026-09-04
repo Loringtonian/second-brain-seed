@@ -15,8 +15,9 @@ things), and grows the structure around what you actually put in.
 
 ## Start
 
-- **Claude Code / Claude Desktop:** open the folder and say *"build my second brain."* (`SEED.md`
-  auto-loads via `CLAUDE.md`.)
+- **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app (*not* Cowork: it has
+  no command line or git, so setup can't run there): open the folder and say *"build my second
+  brain."* (`SEED.md` auto-loads via `CLAUDE.md`.)
 - **Codex / Cursor / other coding agents:** point it at `AGENTS.md`, or paste `SEED.md` as your
   first message.
 - **Any other model (Hermes, OpenRouter, etc.):** paste `SEED.md` as the system / first prompt.
@@ -24,8 +25,14 @@ things), and grows the structure around what you actually put in.
 That's it. Answer a few questions, capture one real thought, and you have a working brain that grows
 from there.
 
+**Already know what you want, or short on patience?** Hand the agent a few lines on who you are and
+what the brain is for. It files them as your spec, skips every question they answer, and still
+writes the core doc — the short path is built in.
+
 The seed ships one example skill pair — `/nano-banana-flash` and `/nano-banana-pro` (image
-generation; add a free `GEMINI_API_KEY` to `.env`) — as the pattern for growing your own.
+generation; add a free `GEMINI_API_KEY` to `.env`) — as the pattern for growing your own, and three
+note templates in `templates/` (your own thinking · others' content · AI synthesis) so every note
+starts from the same shape.
 
 ## Where it can grow
 
