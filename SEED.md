@@ -38,10 +38,14 @@ Ask what they're running you through — it decides which mechanisms you have:
   skills load there, hooks don't.) **Cowork is not Claude Code:** it has no command line and no git,
   so this setup can't run there — if that's where they are, say so and move them to the Code tab
   before going on.
-- **Codex, Cursor, or another coding agent** — config won't auto-load; read the entry files
-  yourself and run operations by hand.
-- **Hermes, a chat bridge, or OpenRouter with another model (including non-Anthropic)** — adapt:
-  same architecture, you emulate the mechanisms manually.
+- **Codex or Cursor** — both load `AGENTS.md` from the repo root on their own (Cursor reads
+  `CLAUDE.md` too), but neither can import another file from it — so the core reaches you only
+  if you read it (see "Hook the core into every session" below). No slash-command skills or
+  hooks; run operations by hand.
+- **Gemini CLI** — loads `GEMINI.md` on its own, and it can import (`@./BRAIN_CORE.md`).
+- **Hermes, a chat bridge, or OpenRouter with another model (including non-Anthropic)** — nothing
+  loads on its own: the core goes into the system prompt or persona file. Same architecture; you
+  emulate the mechanisms manually.
 
 Whatever the platform, the *architecture* below is the same. Only the plumbing changes.
 
@@ -67,6 +71,24 @@ Keep BOTH pointer files present and current even if the owner uses only one tool
 is plain markdown, so the convention costs nothing and the brain stays portable across vendors. If
 the owner is provider-agnostic on principle, this IS the answer to that principle: the identity
 lives in neutral files they own, and each vendor's entry file is a disposable three-line pointer.
+
+**Hook the core into every session — on every platform the owner uses.** The core only works if
+it is in context before your first reply, every session, without the owner having to ask. Wire it
+to whatever the platform loads on its own:
+- **Claude Code** — `CLAUDE.md`, first line `@BRAIN_CORE.md`. The import is mechanical.
+- **Gemini CLI** — `GEMINI.md`, first line `@./BRAIN_CORE.md`. Also mechanical.
+- **Codex and Cursor** — `AGENTS.md` is loaded for you but cannot import, so its first line is
+  *"Read `BRAIN_CORE.md` in full before anything else, every session"* — and you do it, before
+  the first reply.
+- **Hermes, a chat bridge, OpenRouter, anything else** — nothing loads on its own: paste the core
+  into the system prompt or persona file, and re-paste whenever the core changes.
+- **A platform not named here** — ask the owner what their tool loads on its own, and hook the
+  core there the same way.
+
+Create the entry file for **every** platform the owner uses, not only the one they used today
+(`CLAUDE.md` + `AGENTS.md` ship with the seed; add `GEMINI.md` if they use Gemini CLI). Then prove
+each one with the fresh-session check at the end of this brief. A core reachable only through a
+file nothing loads is the same as no core.
 
 The rule that keeps it healthy: **every config file in the repo is either filled or deleted —
 never blank.** A blank `CLAUDE.md`/`AGENTS.md` is worse than a missing one: it looks configured,
@@ -247,8 +269,9 @@ conventions, and privacy scheme. At wrap, complete it:
 - Sweep the session for **durable decisions the gates didn't catch** — one brain or two, capture
   habit, anything they corrected mid-session — and write them into the core in their words.
 - **Verify the Gate-0 repoint still holds:** `CLAUDE.md` and `AGENTS.md` both point at the core,
-  neither still routes to this setup brief, and neither is blank. Keep `SEED.md` as the first-run
-  record.
+  neither still routes to this setup brief, and neither is blank — and every other platform the
+  owner uses has the core hooked the way that platform loads it ("Hook the core into every
+  session", above). Keep `SEED.md` as the first-run record.
 - On Claude Code, also record the durable decisions in its **auto memory** (on by default — it loads
   its `MEMORY.md` index every session). Division of labor: the core doc carries the
   *owner's instructions*; memory accumulates *your learnings about them* — corrections, preferences

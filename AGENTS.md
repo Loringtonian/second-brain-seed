@@ -1,6 +1,8 @@
 # For non-Claude agents (Codex, Cursor, etc.)
 
-Nothing auto-loads on your platform — read files yourself before acting.
+This file is what Codex and Cursor load on their own. It cannot import other files — so, every
+session, **read `BRAIN_CORE.md` in full before anything else.** The core is the brain's identity and
+nothing else puts it in your context.
 
 **First run:** read `SEED.md` in full, then begin — it tells you how to grow a second brain shaped
 to the person you're talking to. Its Gate 0 creates `BRAIN_CORE.md` and repoints this file at it.
