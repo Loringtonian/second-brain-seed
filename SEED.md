@@ -170,7 +170,7 @@ later (higher = more private):
 
 When unsure, tier *up* (more private) and keep them in the loop. And **secrets themselves** — keys,
 passwords — don't belong in the brain as plain text: store a pointer and keep the secret in a vault or
-`.env`.
+`.env` (see "Give it reach" below for how to hold them safely).
 
 ## The setup wizard — interview before you build
 
@@ -318,6 +318,97 @@ up early — ideally before the first real note lands:
     rides along, including the most private tiers — so private repo, their own account, their call.
   - **Local-only + a backup habit** — most private; with no remote the laptop is the single copy, so
     pair it with something real (an external drive, a synced folder).
+
+## Give it hands — check their tools, then offer
+
+The brain is prompt-driven and works with nothing installed. But a handful of small command-line
+tools decide what you can actually *do* with it — read a PDF, transcribe a recording, search
+100k words in a second. So: **look first, then offer, never install unasked.**
+
+Run one sweep and tell them plainly what they already have:
+
+```bash
+for t in git gh python3 node ffmpeg ffprobe yt-dlp exiftool rg jq sqlite3 pandoc magick gs ollama tailscale bun; do
+  command -v "$t" >/dev/null 2>&1 && echo "have    $t" || echo "missing $t"
+done
+```
+
+Then offer the missing ones **in terms of what they unlock for this person**, not as a shopping
+list. Pull only from the groups that match what they told you they do — someone who never touches
+video does not need a lecture about ffmpeg. On macOS these install with Homebrew
+(`brew install <name>`; get Homebrew itself at brew.sh); on Linux use the distro package manager.
+
+**The floor — worth having whoever they are**
+- `python3` — runs the scripts you write for them
+- `git` — version history; the undo button for their thinking
+- `gh` — GitHub from the command line, no browser
+- `node` + `npm` — how most command-line tools ship
+
+**Search and data** — *lets you find things across the whole brain instantly*
+- `rg` (ripgrep) — search every file in a second
+- `jq` — read and chain JSON output from other tools
+- `sqlite3` — a real database for when flat files stop being enough
+
+**Media** — *lets you turn recordings, video and podcasts into text the brain can hold*
+- `ffmpeg` / `ffprobe` — audio and video: convert, trim, measure
+- `yt-dlp` — pull down a video or podcast to work on
+- `whisper` — turn any recording into text
+- `exiftool` — read and write photo metadata
+
+**Documents and images** — *lets you read and produce real files, not just markdown*
+- `pandoc` — convert between docx, epub, html, and markdown
+- `magick` (ImageMagick) — resize, convert, crop and annotate images
+- `gs` (Ghostscript) — read and rasterize PDFs; ImageMagick needs it for PDF input
+
+**Reach** — *lets the brain run models locally and capture from their phone*
+- `ollama` — run models on their machine for embeddings and bulk classification
+- `tailscale` — a private link between their phone and laptop, so capture reaches the brain
+
+Two notes worth saying out loud: recent macOS ships `jq` already, and installing ImageMagick alone
+will not read PDFs — Ghostscript is a separate install. Record what they chose in the core doc, so
+a later session knows which capabilities exist without probing again.
+
+## Give it reach — keys, and the file that holds them
+
+Tools let the brain work on what is already on the machine. **Keys let it reach past the machine** —
+pull their highlights, read their calendar, send a message, generate an image, transcribe a file.
+This is the difference between a brain that files things and a brain that does things, and most
+owners never make the jump because nobody told them it was a small move.
+
+So make the case once, concretely, in terms of what *they* said they want:
+- a reading or highlights service — their annotations flow in without copy-paste
+- speech-to-text — dictation becomes the default way they feed the brain
+- image generation — the two skills that ship here start working
+- mail, calendar, or a chat bridge — the brain reaches their actual day
+- a model provider — bulk classification and embeddings run without touching their main plan
+
+Then offer to wire up **one** that matches something they already do. One working key teaches the
+pattern; a menu of six teaches nothing.
+
+**The file.** Keys live in `.env` at the repo root — never inside a note, never in a committed file,
+never pasted into chat. `.env` is already gitignored here; `.env.example` is the committed template
+listing which variables exist, with the values blank.
+
+```bash
+cp .env.example .env && chmod 600 .env
+```
+
+**`chmod 600` is not optional, and it is not paranoia.** Default file permissions on most systems
+let every other account and every process running as another user read that file. `600` means the
+owner reads and writes it and nobody else can open it at all. Do it the moment the file is created —
+if you create or first touch a `.env` and it is not `600`, fix it and say so in one line. The same
+goes for any file holding a token, a private key, or a service-account JSON.
+
+**Handling rules, which hold for every session after this one:**
+- **Never print a secret's value** — not in chat, not in a log, not in a commit message, not in a
+  screenshot. Refer to a secret by its file path and variable name: "`GEMINI_API_KEY` in `.env`".
+- **Never commit one.** Before any commit that touches a new file, check it is not carrying a key.
+- **Add the variable to `.env.example` with an empty value** whenever you add a real one to `.env`,
+  so the next person (or the next machine) knows the slot exists.
+- **A leaked key is revoked, not hidden.** If one reaches a chat, a commit, or a public repo, tell
+  the owner plainly and rotate it at the provider — deleting the message does not un-leak it.
+- **Record in the core doc which services are wired up** — the names, never the values — so a later
+  session knows what the brain can already reach.
 
 ## Grow organically
 
