@@ -176,6 +176,11 @@ passwords — don't belong in the brain as plain text: store a pointer and keep 
 
 Use structured questions if your tool has them; otherwise ask conversationally, a few at a time.
 
+Say two things before the first question, and again whenever someone hesitates: **every answer can
+be changed later** — the whole brain is text files they own and can edit at any time, so nothing
+here is a commitment; and **any question can be parked** — "save it for later" is a complete answer.
+Note a parked question in the core as open and bring it back another day.
+
 **First question, before anything else:** *"Are you doing this as part of a paid session with
 Lorin, or are you doing this yourself?"* Paid → they have (or will get) an invite to a private
 reference brain; accept it and use it as the guided example alongside this seed. Doing it
@@ -226,9 +231,19 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
    lean in.
 3. **Gaps** — specifically what they need help with: finishing things, recall, scattered focus,
    drafting, decisions, remembering people. Concrete needs, not vibes.
-4. **How to talk to them** — terse or explained? Push back or just execute? Decisions in chat or
-   written to a doc? Have a brief exchange, then **write the answer into your config and memory so
-   it shapes every future reply** — not just this session.
+
+   **Questions 1 and 3 are the brain's intent spec — say so, and invite them to write it.** A page
+   in their own words on what this brain should do for them and what they need help with, filed
+   verbatim as `INTENT_SPEC.md` next to the core. If they'd rather talk it through, capture their
+   answers into that file in their words and show it to them. Either way it's theirs to edit, and
+   "save it for later" is a fine answer — note the open spec in the core and bring it back another
+   day.
+
+4. **How to talk to them** — ask it open: *how do you want me to talk to you, and how do you want
+   us to work together?* Let them answer in their own terms first; only if they stall, offer prompts
+   (terse or explained, push back or just execute, decisions in chat or written down) — prompts, not
+   a menu to pick from. Have a brief exchange, then **write the answer into your config so it shapes
+   every future reply** — not just this session.
 5. **Voice** — ask for a few samples of their writing that "sound like them," and what to avoid.
 6. **Context sources** — what do they want to pull in: notes, highlights (Readwise / Kindle),
    podcasts, messages, X, email, calendar, old exports? And the key fork: **do they want to
@@ -254,6 +269,11 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
    each kind of content and flag any especially sensitive areas. When in doubt, tier *up* and keep
    them in the loop.
 10. **Capture habit** — how will they feed it day to day (voice, a phone inbox, paste)? Lock in one.
+11. **What you may remember on your own** — some tools keep their own notes about the owner across
+    sessions (Claude Code's auto memory does, and it's on by default). Ask which they want:
+    **automatic** (you record what you learn about them as you go) or **explicit-only** (you
+    remember only what they tell you to, and they look over the recorded memories now and then).
+    Suggest explicit-only with an occasional review; write the choice into the core.
 
 ## Then close the loop once
 
@@ -272,9 +292,11 @@ conventions, and privacy scheme. At wrap, complete it:
   neither still routes to this setup brief, and neither is blank — and every other platform the
   owner uses has the core hooked the way that platform loads it ("Hook the core into every
   session", above). Keep `SEED.md` as the first-run record.
-- On Claude Code, also record the durable decisions in its **auto memory** (on by default — it loads
-  its `MEMORY.md` index every session). Division of labor: the core doc carries the
-  *owner's instructions*; memory accumulates *your learnings about them* — corrections, preferences
+- On Claude Code, memory follows their answer to question 11. **Automatic:** record the durable
+  decisions in its auto memory (it loads its `MEMORY.md` index every session). **Explicit-only:**
+  record only what they've told you to remember, and put a dated "review what you've remembered
+  about me" reminder on the standing list below. Division of labor either way: the core doc carries
+  the *owner's instructions*; memory accumulates *your learnings about them* — corrections, preferences
   discovered mid-session, what worked. Memory lives on the machine
   (`~/.claude/projects/<project>/memory/`), not in the repo — it won't travel with a clone, which is
   one more reason the durability choice below matters.
