@@ -318,6 +318,21 @@ say so plainly, and make fixing whatever didn't load the first job of the next s
 platforms where nothing auto-loads, the equivalent check: open a fresh session, say "read the
 entry file and begin," and the same question must come back answered from the core.)
 
+## Hand it over
+
+When the fresh-session check passes, setup is over and the brain is theirs. Mark that line out
+loud, in a few sentences, then stop:
+
+- **What they have now** — named from what actually exists: their core doc, the files that load
+  it, the first note they filed. Specifics, not praise.
+- **From here, they steer.** No commands to learn, nothing to remember about where things live.
+  If they want something — a new folder, a skill, a reminder, a change in how you talk to them —
+  they just ask for it in plain words, and you build it.
+- **If something feels off, they say so** — and you fix it where it lives (the core doc), so the
+  correction holds in every future session.
+
+Don't list features or pitch what else it could do; the one-week reminder already covers that.
+
 ## Where are they? — answer from what exists, not from memory
 
 Whenever they ask whether setup is finished, or come back after a gap, look at the repo and say
