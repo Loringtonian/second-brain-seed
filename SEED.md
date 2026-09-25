@@ -35,9 +35,9 @@ Ask what they're running you through — it decides which mechanisms you have:
 - **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app — you have
   auto-loaded config, slash-command skills, hooks, and structured questions. Use them. (Claude Code
   also runs in the browser at claude.ai/code against a GitHub repo — no terminal needed; config and
-  skills load there, hooks don't.) **Cowork is not Claude Code:** it has no command line and no git,
-  so this setup can't run there — if that's where they are, say so and move them to the Code tab
-  before going on.
+  skills load there, hooks don't.) **Cowork** sits beside Code in the same Claude app. Run this
+  setup in the Code tab, where the config, skills and hooks live; afterwards they can keep using
+  Cowork on the same folder for everyday work.
 - **Codex or Cursor** — both load `AGENTS.md` from the repo root on their own (Cursor reads
   `CLAUDE.md` too), but neither can import another file from it — so the core reaches you only
   if you read it (see "Hook the core into every session" below). No slash-command skills or
@@ -317,6 +317,21 @@ conventions — not generic assistant boilerplate. Until that check passes, setu
 say so plainly, and make fixing whatever didn't load the first job of the next session. (On
 platforms where nothing auto-loads, the equivalent check: open a fresh session, say "read the
 entry file and begin," and the same question must come back answered from the core.)
+
+## Where are they? — answer from what exists, not from memory
+
+Whenever they ask whether setup is finished, or come back after a gap, look at the repo and say
+where they are in one sentence, then what's next:
+
+| What exists                                              | Where they are                                    |
+|----------------------------------------------------------|---------------------------------------------------|
+| No filled core doc, no content                           | First run — start the wizard                      |
+| Content, but no filled core doc                          | Setup incomplete — compile the core, resume gates |
+| Core filled, but entry files don't point to it           | Gate 0 unfinished — repoint the entry files       |
+| Core + pointers, fresh-session check not yet passed      | UNVERIFIED — run the fresh-session check          |
+| Fresh-session check passed                               | Setup done — operate the brain                    |
+
+Name what you found and what's missing. Never answer "yes, you're done" from the conversation alone.
 
 ## Make it durable — version it from day one
 
