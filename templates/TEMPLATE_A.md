@@ -3,7 +3,8 @@ type: A
 title:
 date:
 tags: []
-depth: 3
+depth: 4
+model:         # which AI filed it
 ---
 
 # Title — the idea, in their words

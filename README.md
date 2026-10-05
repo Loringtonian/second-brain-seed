@@ -1,11 +1,19 @@
+---
+depth: 2
+---
 # Second Brain Seed
+
+> **DOWNLOAD AS ZIP** — the green **Code** button above → **Download ZIP**. Don't clone unless you
+> know what a remote is: a clone keeps pointing at this public repo, and a `git push` months from
+> now would send your private thinking here. Unzip it into the folder you want your brain to live in
+> (name the folder what you'll call the brain); the agent sets up version history fresh.
 
 > **Here for a session with Lorin?** Book at [loringtonian.github.io/links](https://loringtonian.github.io/links/).
 
 One prompt that grows into your own AI second brain. No 130-file template to strip down — just a
 seed an agent reads to build a personal knowledge base shaped to *you*.
 
-Clone it, open it in your AI agent, and say **"build my second brain."** The agent reads `SEED.md`,
+Download it, open it in your AI agent **from inside that folder**, and say **"build my second brain."** The agent reads `SEED.md`,
 interviews you (purpose, your work, your gaps, your voice, what to pull in, how private to keep
 things), and grows the structure around what you actually put in.
 
@@ -16,8 +24,11 @@ things), and grows the structure around what you actually put in.
 ## Start
 
 - **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app (*not* Cowork: it has
-  no command line or git, so setup can't run there): open the folder and say *"build my second
-  brain."* (`SEED.md` auto-loads via `CLAUDE.md`.)
+  no command line or git, so setup can't run there): start Claude Code **inside the brain folder**
+  (memory and config load from the folder you start in) and say *"build my second brain."*
+  (`SEED.md` auto-loads via `CLAUDE.md`.) During setup the agent gives you a one-word shortcut — a
+  shell alias named whatever you call the brain (`2b`, `exo`, `cortex`, `sec`, `brain`…) — so every
+  later session opens in the right folder without the cd-then-launch ritual. If it doesn't, ask for one.
 - **Codex / Cursor / other coding agents:** point it at `AGENTS.md`, or paste `SEED.md` as your
   first message.
 - **Any other model (Hermes, OpenRouter, etc.):** paste `SEED.md` as the system / first prompt.
@@ -36,5 +47,5 @@ starts from the same shape.
 
 ## Where it can grow
 
-`INSPIRATION.md` links a fully built-out second brain — routers, templates, dozens of skills, hooks.
-A reference once your seed has sprouted; overkill on day one.
+Get through setup and live with your brain for a week, and it will tell you how to see a fully
+built-out one — routers, templates, dozens of skills, hooks. Overkill on day one.

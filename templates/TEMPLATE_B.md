@@ -4,7 +4,8 @@ title:
 date:
 source:        # author + link or citation — always attributed
 tags: []
-depth: 3
+depth: 4
+model:         # which AI filed it
 ---
 
 # Title — what it is, whose it is
