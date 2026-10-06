@@ -9,6 +9,7 @@ depth: 2
 > (name the folder what you'll call the brain); the agent sets up version history fresh.
 
 > **Here for a session with Lorin?** Book at [loringtonian.github.io/links](https://loringtonian.github.io/links/).
+> More about the Seed, sessions and the community: [trimtablabs.xyz](https://trimtablabs.xyz/).
 
 One prompt that grows into your own AI second brain. No 130-file template to strip down — just a
 seed an agent reads to build a personal knowledge base shaped to *you*.
