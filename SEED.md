@@ -367,7 +367,7 @@ From here on, persistence happens at **gates**, not at the end:
 - **Gate 1 — after questions 1–4** (purpose, who they are, gaps, comms style): write those into
   the core, in their exact words, before moving on.
 - **Gate 2 — after the conventions are settled** (note structure + privacy tiers + the trust
-  map): write the chosen conventions in.
+  map): write the chosen conventions in, including the sending protocol.
 - **Gate 3 — at wrap** ("Make it stick" below): standing reminders, memory split, durability.
 
 If the session ends between gates, the core says exactly where to resume. At every gate, tell the
@@ -462,6 +462,11 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
    brain, how much do you want to share, what would count as a leak for you — resolved into which
    people and which services may see each tier, and where the brain may live. Their leak answer is
    the ceiling for every security suggestion you make from here on. Gate 2 is not complete without it.
+   Then set the sending protocol: the standing rule for anything the brain does as them in the world,
+   like sending email or messages, posting, accepting invites or paying. Ask how they want it
+   handled, offer the default (draft it, show me, send only when I say so, every time), and write
+   their answer into the core as a standing rule, in their words, so every later session follows it.
+   A connected tool, including connectors added in the Claude app, is never permission to use it.
 10. **Which AI runs this brain** — its own question, separate from the trust map: the model reading
     the brain sees all of it, for years, and most people new to this do not know they have a choice.
     Give the overview plainly, then let them choose in their own words; write the choice into the
@@ -817,7 +822,7 @@ them when you write it. In a month this repo should look nothing like itself —
   send.** A session that reads other people's material (transcripts, articles, inboxes) does not
   also get to post, email or push. When they wire the first thing that can send, make it
   draft-for-their-approval, and put the rule where the harness enforces it (a hook), not only in
-  prose.
+  prose. Until the sending protocol is in the core, draft only, never send.
 - Attribute anything that isn't theirs.
 - Ask before large structural moves; for small additions, just make them and report.
 
