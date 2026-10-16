@@ -113,6 +113,13 @@ never blank.** A blank `CLAUDE.md`/`AGENTS.md` is worse than a missing one: it l
 loads nothing, and leaves the agent with no written identity — which is how an agent ends up
 refusing work as "not its job" or passively accompanying the owner instead of executing.
 
+**The entry files stay in step with the core.** The core holds the brain's content. The small
+entry files your agent loads first — `CLAUDE.md`, and `AGENTS.md` if it is there — exist to bring
+the core in, so keep setup state and rules out of them and in the core. At Gate 0, replace the text
+this seed shipped in them, not only the first line. Whenever one entry file changes, check the
+others in the same commit. One left behind keeps giving your agent old instructions: an `AGENTS.md`
+still saying "setup is not finished" weeks later can send the next session back into setup.
+
 **Watch for the bypass pattern.** Some owners route around config-writing without meaning to:
 they arrive with a pre-written spec of their own (see the fast-path in the wizard below), they
 pre-build their own folder structure, or their portability principles make vendor-named files
@@ -127,7 +134,8 @@ cannot do the work. Between the two is a ladder, and the owner should be able to
 
 - **Tier 0 — always on.** `BRAIN_CORE.md` and, inside it, the **router**: a handful of rules of the
   form *if the request is about X, read Y first*. Keep tier 0 to a few pages — it is paid for on
-  every single reply.
+  every single reply. Write each core line as a rule; the story behind it, examples and history go
+  in a linked file.
 - **Tier 1 — on demand, by rule.** The docs the router names: a project's status doc, the people
   file, the standing reminders, the decisions log. Read silently when a rule fires, before the first
   reply, no announcing.
@@ -475,7 +483,25 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
     this is the one decision that should be made knowingly. Mixed answers are normal (frontier for
     tiers 1–3, private inference for 4–5): record the split per tier in the map, and revisit it
     whenever a new service or a new kind of content arrives.
-11. **Capture habit** — how will they feed it day to day (voice, a phone inbox, paste)? Lock in one.
+11. **Capture habit** — how will they feed it day to day? This is the capture layer: how a thought
+    reaches the brain when they are not sitting at the computer — on a walk, in a meeting, half
+    asleep. Most owners have never chosen one on purpose. Show them the kinds in plain words, then
+    help them lock in one:
+    - **Talk to a running session from their phone** — for example Claude Code's Remote Control,
+      which can be set to start with every session so it is always there.
+    - **Message a bot** — a chat app (Telegram, WhatsApp, Signal) connected to the brain through a
+      bridge such as Hermes. Voice notes count.
+    - **Drop it in an inbox** — one email address or label, or one synced folder (Google Drive,
+      Dropbox, the phone's voice memos) for memos, screenshots and files.
+    - **Bring in what they already highlight** — reading, podcast and bookmark highlights from apps
+      they already use, through each app's export.
+    - **Type or dictate into the session** — the simplest; needs nothing set up.
+    Whatever they choose, build two habits around it. **One inbox, checked at the start of every
+    session**, so nothing waits unseen. **A capture is filed, not answered with a question**: when
+    they send something from their phone they have moved on, so file it where it fits, say that you
+    chose the place, and report what you filed — a "where should this go?" sent back is a capture
+    lost. Show them how to name a session so they can find it again (`/rename` in Claude Code).
+    Lock in one route; a second can come later, once the first is a habit.
 12. **What you may remember on your own** — some tools keep their own notes about the owner across
     sessions (Claude Code's auto memory does, and it's on by default). Ask which they want:
     **automatic** (you record what you learn about them as you go) or **explicit-only** (you
@@ -524,6 +550,12 @@ conventions, and privacy scheme. At wrap, complete it:
   not corpus: it lives on the machine (`~/.claude/projects/<project>/memory/`), not in the repo,
   carries no tier, does not load in a different folder, and won't travel with a clone. The core doc is
   canonical; memory holds nothing the core does not already hold.
+  Tell the owner the difference in two lines, in these words or close to them: *"`CLAUDE.md`, and
+  the core it points to, is your instructions to me: it lives in this folder, you own it, and I read
+  it at the start of every session. `MEMORY.md` is my own notebook about what I learn working with
+  you, kept by Claude Code on this machine outside the folder; it doesn't travel with the brain, so
+  anything that should change how I work goes into the core as well."* If they chose explicit-only,
+  a memory that stays nearly empty while the core keeps changing is the design working, not a fault.
 - Keep a short **standing-reminders list** in the core doc — open commitments and in-progress
   intentions that every fresh session surfaces until they're done. It's how a promise made on
   Monday survives to Thursday without the owner having to remember to re-mention it.
