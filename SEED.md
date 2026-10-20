@@ -43,21 +43,18 @@ find it.
 
 ## First, learn your environment
 
-Ask what they're running you through — it decides which mechanisms you have:
+Ask once which tools they use: *"Which tools will you use with this brain — Claude Code, another
+coding agent, a chat app, something else?"* The answer decides which mechanisms you have.
 - **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app — you have
   auto-loaded config, slash-command skills, hooks, and structured questions. Use them. (Claude Code
   also runs in the browser at claude.ai/code against a GitHub repo — no terminal needed; config and
   skills load there, hooks don't.) **Cowork** sits beside Code in the same Claude app. Run this
   setup in the Code tab, where the config, skills and hooks live; afterwards they can keep using
   Cowork on the same folder for everyday work.
-- **Codex or Cursor** — both load `AGENTS.md` from the repo root on their own (Cursor reads
-  `CLAUDE.md` too), but neither can import another file from it — so the core reaches you only
-  if you read it (see "Hook the core into every session" below). No slash-command skills or
-  hooks; run operations by hand.
-- **Gemini CLI** — loads `GEMINI.md` on its own, and it can import (`@./BRAIN_CORE.md`).
-- **Hermes, a chat bridge, or OpenRouter with another model (including non-Anthropic)** — nothing
-  loads on its own: the core goes into the system prompt or persona file. Same architecture; you
-  emulate the mechanisms manually.
+- **Any other tool** — look up its current best practices before you wire anything: which file
+  it loads on its own, whether that file can import another, and whether it has skills, hooks or
+  structured questions. Tools change often, so look it up every time, even for a tool you think
+  you know. Write what you found into the core in one line per tool.
 
 Whatever the platform, the *architecture* below is the same. Only the plumbing changes.
 
@@ -82,7 +79,7 @@ their privacy scheme, their standing reminders — lives in **one platform-neutr
 `BRAIN_CORE.md` at the repo root. Every agent entry file is a **thin pointer to it**:
 
 - `CLAUDE.md` — Claude Code / Claude Desktop auto-load this; it imports the core (`@BRAIN_CORE.md`).
-- `AGENTS.md` — Codex, Cursor, and most other agents read this; it says "read `BRAIN_CORE.md`
+- `AGENTS.md` — many other agent tools read this; it says "read `BRAIN_CORE.md`
   first, then proceed."
 
 Keep BOTH pointer files present and current even if the owner uses only one tool today — the core
@@ -94,17 +91,14 @@ lives in neutral files they own, and each vendor's entry file is a disposable th
 it is in context before your first reply, every session, without the owner having to ask. Wire it
 to whatever the platform loads on its own:
 - **Claude Code** — `CLAUDE.md`, first line `@BRAIN_CORE.md`. The import is mechanical.
-- **Gemini CLI** — `GEMINI.md`, first line `@./BRAIN_CORE.md`. Also mechanical.
-- **Codex and Cursor** — `AGENTS.md` is loaded for you but cannot import, so its first line is
-  *"Read `BRAIN_CORE.md` in full before anything else, every session"* — and you do it, before
-  the first reply.
-- **Hermes, a chat bridge, OpenRouter, anything else** — nothing loads on its own: paste the core
-  into the system prompt or persona file, and re-paste whenever the core changes.
-- **A platform not named here** — ask the owner what their tool loads on its own, and hook the
-  core there the same way.
+- **Every other tool the owner named** — use what you looked up. If it loads a file and that
+  file can import, import the core there. If it loads a file but cannot import, that file's first
+  line is *"Read `BRAIN_CORE.md` in full before anything else, every session"* — and you do it,
+  before the first reply. If nothing loads on its own, paste the core into its system prompt or
+  persona file, and re-paste whenever the core changes.
 
 Create the entry file for **every** platform the owner uses, not only the one they used today
-(`CLAUDE.md` + `AGENTS.md` ship with the seed; add `GEMINI.md` if they use Gemini CLI). Then prove
+(`CLAUDE.md` + `AGENTS.md` ship with the seed; add the file any other tool of theirs loads). Then prove
 each one with the fresh-session check at the end of this brief. A core reachable only through a
 file nothing loads is the same as no core.
 
@@ -168,17 +162,17 @@ that fires monthly belongs in a doc the core points at. At wrap and at every lat
 change, the core carries a one-line *loads when* note per existing doc, so the owner can read the
 ladder in one place.
 
-Platforms differ only in the plumbing: Claude Code and Gemini import the core mechanically and you
-read tier 1 with a tool call; Codex, Cursor and chat bridges need the instruction in `AGENTS.md` or
-the system prompt to do the same by hand. The ladder is the same.
+Platforms differ only in the plumbing: Claude Code imports the core mechanically and you read
+tier 1 with a tool call; a tool that cannot import needs the instruction in its entry file or
+system prompt to do the same by hand. The ladder is the same.
 
 ## What a second brain actually is
 
 Not a notes app, not a vector database with a chat box. It's a **context-engineering system** —
 personal context management: a general agent gets dramatically more useful on personal data when
 it's routed to exactly the right context for the task — no more, no less. Three parts: the
-**model** (rented — it improves and gets swapped), the **harness** (Claude Code, Codex, Hermes…
-also swappable), and the **corpus** — these files, the only part the owner actually owns. Build so
+**model** (rented — it improves and gets swapped), the **harness** (Claude Code or
+another agent tool — also swappable), and the **corpus** — these files, the only part the owner actually owns. Build so
 the brain survives a change of model or harness. The proven pieces (adopt what fits this person;
 emulate them however their platform allows):
 
@@ -782,11 +776,10 @@ Two structural defaults that pay off as it grows:
 - **Every project follows the same shape** (a status/plan doc, same sections each time) — uniform
   structure is what lets you operate ten projects as easily as one.
 - **Each project folder carries its own `AGENTS.md`** — the project's goal, where it stands, and
-  its own rules — so the context is there where the work happens. Tools load it differently: Codex
-  reads the `AGENTS.md` files from the repo root down to the folder it was started in; Cursor picks
-  up a nested one when it works on files in that folder; Claude Code reads `CLAUDE.md` (and
-  `AGENTS.md` only where no `CLAUDE.md` exists), loading a subfolder's file once it opens a file
-  there. Keep one source of truth: each project's `CLAUDE.md` is the single line `@AGENTS.md`. Tell
+  its own rules — so the context is there where the work happens. Tools load it differently:
+  Claude Code reads `CLAUDE.md` (and `AGENTS.md` only where no `CLAUDE.md` exists), loading a
+  subfolder's file once it opens a file there; for any other tool, use what you looked up about how
+  it loads nested files. Keep one source of truth: each project's `CLAUDE.md` is the single line `@AGENTS.md`. Tell
   the owner the habit that works in every tool: start the session inside the project folder.
 
 - **Any repeated operation carries its own done/open list** — a batch ingest, a set of

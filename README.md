@@ -30,9 +30,8 @@ things), and grows the structure around what you actually put in.
   (`SEED.md` auto-loads via `CLAUDE.md`.) During setup the agent gives you a one-word shortcut — a
   shell alias named whatever you call the brain (`2b`, `exo`, `cortex`, `sec`, `brain`…) — so every
   later session opens in the right folder without the cd-then-launch ritual. If it doesn't, ask for one.
-- **Codex / Cursor / other coding agents:** point it at `AGENTS.md`, or paste `SEED.md` as your
-  first message.
-- **Any other model (Hermes, OpenRouter, etc.):** paste `SEED.md` as the system / first prompt.
+- **Any other agent tool:** point it at `AGENTS.md`, or paste `SEED.md` as the system prompt or
+  first message. The agent asks which tools you use and looks up how each one works.
 
 That's it. Answer a few questions, capture one real thought, and you have a working brain that grows
 from there.

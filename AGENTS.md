@@ -1,6 +1,6 @@
-# For non-Claude agents (Codex, Cursor, etc.)
+# For agent tools other than Claude Code
 
-This file is what Codex and Cursor load on their own. It cannot import other files — so, every
+Many agent tools load this file on their own, and many cannot import other files from it — so, every
 session, **read `BRAIN_CORE.md` in full before anything else.** The core is the brain's identity and
 nothing else puts it in your context.
 
