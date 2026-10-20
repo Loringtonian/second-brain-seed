@@ -482,25 +482,32 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
     this is the one decision that should be made knowingly. Mixed answers are normal (frontier for
     tiers 1–3, private inference for 4–5): record the split per tier in the map, and revisit it
     whenever a new service or a new kind of content arrives.
-11. **Capture habit** — how will they feed it day to day? This is the capture layer: how a thought
-    reaches the brain when they are not sitting at the computer — on a walk, in a meeting, half
-    asleep. Most owners have never chosen one on purpose. Show them the kinds in plain words, then
-    help them lock in one:
+11. **How they will talk to the brain** — the primary ways the owner will reach it day to day.
+    This is the capture layer: how a thought gets in, including when they are not at the computer —
+    on a walk, in a meeting, half asleep. Ask it open first: *"How do you picture talking to your
+    brain day to day?"* Many owners will only ever use the agent session itself, and that is a
+    complete answer. Others want their phone, a chat app, or email. If they aren't sure, show the
+    kinds in plain words:
+    - **Type or dictate into the session** — the simplest; needs nothing set up.
     - **Talk to a running session from their phone** — for example Claude Code's Remote Control,
       which can be set to start with every session so it is always there.
-    - **Message a bot** — a chat app (Telegram, WhatsApp, Signal) connected to the brain through a
-      bridge such as Hermes. Voice notes count.
-    - **Drop it in an inbox** — one email address or label, or one synced folder (Google Drive,
-      Dropbox, the phone's voice memos) for memos, screenshots and files.
+    - **Message the brain in a chat app** — WhatsApp, Telegram, Signal — through a bridge such as
+      Hermes. Voice notes count.
+    - **Send or drop things somewhere** — an email address or label, or a synced folder (Google
+      Drive, Dropbox, the phone's voice memos) for memos, screenshots and files.
     - **Bring in what they already highlight** — reading, podcast and bookmark highlights from apps
       they already use, through each app's export.
-    - **Type or dictate into the session** — the simplest; needs nothing set up.
-    Whatever they choose, build two habits around it. **One inbox, checked at the start of every
-    session**, so nothing waits unseen. **A capture is filed, not answered with a question**: when
-    they send something from their phone they have moved on, so file it where it fits, say that you
-    chose the place, and report what you filed — a "where should this go?" sent back is a capture
-    lost. Show them how to name a session so they can find it again (`/rename` in Claude Code).
-    Lock in one route; a second can come later, once the first is a habit.
+    Each route beyond the session has its own setup, norms and risks: a chat bridge, a WhatsApp
+    number and an email address each work differently, and each is a door other people can knock
+    on. For any route like that, look up its current best practices before you wire it, put it on
+    the trust map, and write it into the core: the route, how and when it is checked, and what may
+    come in or go out through it. Then build the habits that route needs. If it leaves things
+    waiting somewhere, check it at the start of every session, so nothing waits unseen. **A capture
+    is filed, not answered with a question**: when they send something from their phone they have
+    moved on, so file it where it fits, say that you chose the place, and report what you filed — a
+    "where should this go?" sent back is a capture lost. Show them how to name a session so they
+    can find it again (`/rename` in Claude Code). Start with one route; a second can come later,
+    once the first is a habit.
 12. **What you may remember on your own** — some tools keep their own notes about the owner across
     sessions (Claude Code's auto memory does, and it's on by default). Ask which they want:
     **automatic** (you record what you learn about them as you go) or **explicit-only** (you
@@ -524,11 +531,12 @@ conventions, and privacy scheme. At wrap, complete it:
   one came from: their words, or a choice they made from options you wrote — *"these are in your
   words; these you picked from my list — say it differently if my wording isn't yours."* The list is
   the last chance to catch your sentences standing in for theirs.
-- **Verify a capture habit exists and has been used once.** Question 11 is the one answer the brain
-  cannot run without — a brain nobody feeds stops growing the day setup ends. Before you report done,
-  name the habit in the core in their words, exercise it once in this session (one dictation, one
-  paste, one inbox drop), and if it is unanswered say so as the first open item, not a missing line.
-- **Check the gate list before you close:** capture habit recorded; the one-word way in (alias or
+- **Verify the way they will talk to the brain is named and has been used once.** Question 11 is
+  the one answer the brain cannot run without — a brain nobody feeds stops growing the day setup
+  ends. Before you report done, name the route in the core in their words, use it once in this
+  session (one dictation, one paste, one message through the chosen route), and if it is unanswered
+  say so as the first open item, not a missing line.
+- **Check the gate list before you close:** the way they will talk to the brain recorded; the one-word way in (alias or
   its equivalent) written and tested in a fresh shell; the one-week inspiration reminder and the
   one-month checkup reminder on the standing list, each with its date; the two fresh-session
   questions handed over verbatim — *"Who am I, and how do we work together?"* and *"What context loaded automatically, and what should have?"* —
