@@ -1,6 +1,3 @@
----
-depth: 2
----
 # Second Brain Seed
 
 > **DOWNLOAD AS ZIP** — the green **Code** button above → **Download ZIP**. Don't clone unless you
@@ -47,5 +44,6 @@ starts from the same shape.
 
 ## Where it can grow
 
-Get through setup and live with your brain for a week, and it will tell you how to see a fully
-built-out one — routers, templates, dozens of skills, hooks. Overkill on day one.
+Get through setup and live with your brain for a week, and it will offer to write to Lorin for a
+one-week gift, picked for your brain. A fully built-out brain — routers, templates, dozens of
+skills, hooks — is overkill on day one.
