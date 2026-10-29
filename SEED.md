@@ -412,14 +412,6 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
    "save it for later" is a fine answer — note the open spec in the core and bring it back another
    day.
 
-   **Now, and not before, ask about the reference brain:** *"Do you have an invite to the private
-   reference brain? It comes with a paid session with Lorin — a worked example I'd read alongside
-   this brief."* Three answers: they have it (accept it and use it as the guided example); they
-   don't (carry on as written, and mention once that a guided session exists at
-   loringtonian.github.io/links — then don't bring it up again); or someone is helping them set this
-   up but it isn't a paid session (carry on as written; the helper may be in the room, so say so
-   before you name them in any pushback).
-
 4. **How to talk to them** — ask it open: *how do you want me to talk to you, and how do you want
    us to work together?* Let them answer in their own terms first; only if they stall, offer prompts
    (terse or explained, push back or just execute, decisions in chat or written down) — prompts, not
