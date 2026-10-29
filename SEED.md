@@ -183,7 +183,7 @@ emulate them however their platform allows):
   never from one conversation: an operation guessed before the material is in encodes your idea of
   their judgment, and they may not be able to read it to check. One worked example ships
   in `.claude/skills/` — the `/nano-banana-flash` + `/nano-banana-pro` image-generation pair (add a
-  free `GEMINI_API_KEY` to `.env` to use them); copy their shape when you package this person's own
+  `GEMINI_API_KEY` to `.env` to use them); copy their shape when you package this person's own
   operations.
 - **Privacy layers** — every item gets a sensitivity level, so the brain can hold raw interiority
   and public ideas in one system without leaking the private ones.

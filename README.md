@@ -5,7 +5,7 @@
 > now would send your private thinking here. Unzip it into the folder you want your brain to live in
 > (name the folder what you'll call the brain); the agent sets up version history fresh.
 
-> **Here for a session with Lorin?** Book at [loringtonian.github.io/links](https://loringtonian.github.io/links/).
+> **Here for a session with Lorin?** Book at [trimtablabs.xyz/book](https://trimtablabs.xyz/book).
 > More about the Seed, sessions and the community: [trimtablabs.xyz](https://trimtablabs.xyz/).
 
 One prompt that grows into your own AI second brain. No 130-file template to strip down — just a
@@ -38,7 +38,7 @@ what the brain is for. It files them as your spec, skips every question they ans
 writes the core doc — the short path is built in.
 
 The seed ships one example skill pair — `/nano-banana-flash` and `/nano-banana-pro` (image
-generation; add a free `GEMINI_API_KEY` to `.env`) — as the pattern for growing your own, and three
+generation; add a `GEMINI_API_KEY` to `.env`) — as the pattern for growing your own, and three
 note templates in `templates/` (your own thinking · others' content · AI synthesis) so every note
 starts from the same shape.
 
