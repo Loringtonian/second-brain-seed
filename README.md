@@ -21,13 +21,22 @@ things), and grows the structure around what you actually put in.
 
 ## Start
 
-- **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app (*not* Cowork: it has
-  no command line or git, so setup can't run there): start Claude Code **inside the brain folder**
-  (memory and config load from the folder you start in) and say *"build my second brain."*
-  (`SEED.md` auto-loads via `CLAUDE.md`.) During setup the agent gives you a one-word shortcut — a
-  shell alias named whatever you call the brain (`2b`, `exo`, `cortex`, `sec`, `brain`…) — so every
-  later session opens in the right folder without the cd-then-launch ritual. If it doesn't, ask for one.
-- **Any other agent tool:** point it at `AGENTS.md`, or paste `SEED.md` as the system prompt or
+Unzip the Seed into the folder where you want your brain to live. Then:
+
+- **Have Claude Code set up?** Use it; it's what we know best and recommend. Start `claude` inside
+  the brain folder and say *"build my second brain."* (`SEED.md` auto-loads via `CLAUDE.md`.) During
+  setup the agent gives you a one-word shortcut — a shell alias named whatever you call the brain
+  (`2b`, `exo`, `cortex`, `sec`, `brain`…) — so every later session opens in the right folder. If it
+  doesn't, ask for one.
+- **Not set up yet?** Open the brain folder in the Claude Desktop app, in either tab:
+  - **Code**: choose the brain folder and say *"build my second brain."*
+  - **Claude**: connect the brain folder and say *"read SEED.md and build my second brain."* Early on
+    it asks permission to delete files in the folder. Say yes: the tool that saves versions of your
+    brain (git) deletes its own scratch files each time it saves, and the saves fail without this
+    permission. It asks again in each new conversation.
+- **No git?** You don't need to install it first. The agent checks, and installs it with you if it's
+  missing.
+- **Use a different agent tool?** Point it at `AGENTS.md`, or paste `SEED.md` as the system prompt or
   first message. The agent asks which tools you use and looks up how each one works.
 
 That's it. Answer a few questions, capture one real thought, and you have a working brain that grows

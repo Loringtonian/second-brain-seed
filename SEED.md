@@ -45,9 +45,12 @@ coding agent, a chat app, something else?"* The answer decides which mechanisms 
 - **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app — you have
   auto-loaded config, slash-command skills, hooks, and structured questions. Use them. (Claude Code
   also runs in the browser at claude.ai/code against a GitHub repo — no terminal needed; config and
-  skills load there, hooks don't.) **Cowork** sits beside Code in the same Claude app. Run this
-  setup in the Code tab, where the config, skills and hooks live; afterwards they can keep using
-  Cowork on the same folder for everyday work.
+  skills load there, hooks don't.)
+- **The Claude tab of the Claude Desktop app** — setup works here too. Your commands run in a small
+  Linux machine with the brain folder connected; git is already installed there. Before the first
+  commit, ask for permission to delete files in the folder: git removes its own temporary and lock
+  files, and without it the commit fails. It asks once per conversation. Skip the shell shortcut
+  step.
 - **Any other tool** — look up its current best practices before you wire anything: which file
   it loads on its own, whether that file can import another, and whether it has skills, hooks or
   structured questions. Tools change often, so look it up every time, even for a tool you think
@@ -61,7 +64,11 @@ Whatever the platform, the *architecture* below is the same. Only the plumbing c
 tidying up the download itself.** After that commit the move is reversible; before it, the file in
 their Downloads folder is the only copy and a mistake is permanent. If they downloaded a ZIP rather
 than cloning, leave it where it landed and do the moving yourself — a folder moved by hand and then
-moved again by you is how files go missing.
+moved again by you is how files go missing. First check that git is there (`git --version`). If it
+is missing, install it before anything else (macOS: `xcode-select --install`; Windows: git-scm.com;
+Linux: the distro package manager). Then, before that first commit, set a name and email for this
+repo only (`git config user.name` and `git config user.email`; ask the owner what to use). Some
+environments have none, and the commit fails without them.
 
 If this was cloned from the public seed repo, `origin` still points at it — which means a naive
 `git push` months from now targets a stranger's repo with the owner's private thinking. **Before
