@@ -343,8 +343,15 @@ starts from zero. Ask what they already have and where — files and exports, no
 memory this tool already holds about them from other folders, work living in another repo — then
 look, count it, and size the reading (bytes ÷ 4 ≈ tokens) against their plan. While you look, sweep
 for secrets: any memory file, note or deployment doc you can already read may carry live credentials
-in plain text; name every one you find and move it to `.env` at `600` with a pointer left behind — do
-it, don't offer it, and never leave it as a line in a recap. Write what exists into the core as the
+in plain text; name every one you find by its file path
+and variable name only, never its value (never print a secret in chat, a note or a commit), and ask
+before moving any of them. For each, say where it is and why it is a risk there (anything that reads,
+syncs, backs up or commits that file can expose it). Before you offer the move, find what reads the
+key from that spot (search the brain for the file's path and the key's name) and say what the move
+would break: each script, config or app that reads it there stops working until it reads `.env`
+instead. Offer to move it to `.env` at `600` with a pointer left behind and to repoint each reader.
+Move only on their yes; then run or check each reader and say what you checked. A find they decline
+stays where it is, written in the core as a known risk, never as a line in a recap. Write what exists into the core as the
 ingestion map with its budget attached, and say plainly that this is joining work already in
 progress, not starting a new one.
 
