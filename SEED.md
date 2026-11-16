@@ -388,9 +388,12 @@ a file nothing auto-loads configures nothing.
 
 Walk these axes, writing answers into the core as you go (preserve their exact words):
 
-**First, one brain or two?** Ask up front: is this brain **personal**, **professional**, or do they
-want **two separate brains** (e.g., work + personal) kept firewalled? If one, note its scope and shape
-it to that. If two, set up each as its own folder/brain — run this setup once per brain, keep them
+**First, one brain or two?** Ask up front: will anyone else use the business side of this brain — a
+partner, a team? Then recommend by one rule: if they work alone (a solopreneur), build **one brain**
+that holds work and life together; if the business brain will be shared with other people, build
+**two brains**, kept firewalled: the shared business brain, and a personal one only they use. The
+choice is theirs; the rule is your recommendation. If one, note its scope and shape it to that.
+If two, set up each as its own folder/brain — run this setup once per brain, keep them
 separate, and where something belongs in both give it **one home and a reference in the other** (not a
 copy). The note structure and privacy tiers apply per brain.
 
