@@ -355,6 +355,30 @@ stays where it is, written in the core as a known risk, never as a line in a rec
 ingestion map with its budget attached, and say plainly that this is joining work already in
 progress, not starting a new one.
 
+**Skills they already made (only if they have used an agent tool before).** Ask whether they have
+used Claude Code, Codex or another agent tool before this brain. If not, skip this step: there is
+nothing to find. You can only look if this session can reach their home folder, which is true when
+the agent runs on their own computer. In a cloud session, or in the Desktop app's Claude tab where
+only the brain folder is connected, say so and skip the step, or let them connect those folders
+first. If you can look, ask before you open anything: *"You may have made skills or commands in
+other folders over time. They often say a lot about what you work on. May I look for them? I'll
+list only their names and where they are, and open nothing until you say which."* A no ends the
+step; write one line in the core, "existing skills: declined, <date>", so no later session asks
+again. On a yes, look in the home folders first (for Claude Code `~/.claude/skills/` and
+`~/.claude/commands/`; for Codex `~/.agents/skills/`, `~/.codex/skills/` and `~/.codex/prompts/`;
+for any other tool, look up where it keeps skills today). Then ask where they keep their projects,
+and search only those folders for `.claude/skills`, `.claude/commands` and `.agents/skills`; never
+search the whole disk. Set aside what they did not make (skills bundled with the tool, skills
+synced from an account, plugin skills, the image pair this Seed ships) with one count line. Show
+a short list: each skill's name, its folder, its own one-line description, and whether it already
+loads in this brain on their computer (a home-folder skill does, though not in a cloud session; a
+skill inside another project folder does not). They pick which ones you may read, and can drop
+any, for example a folder that holds someone else's work. Read only the skill or command file of
+each one picked, not its scripts or data. A credential seen in one falls under the secrets sweep
+above. Leave every skill where it is: no copy, move, edit or rename. The brain points to them by
+path, so there is one home and no copy to drift. If they later ask to use one of those project
+skills here, offer to link it then. What the skills say about them is used in question 2.
+
 **Gate 0 — before you ask anything: create `BRAIN_CORE.md` now.** Seed it with what little you
 already know (platform, date, owner's name if you have it) plus one line: *"Setup in progress —
 resume the wizard at question N."* Put two more lines in it that stay for good: at the top,
@@ -419,6 +443,17 @@ sensitive gets pulled in ungated. Then tag each item's tier as it lands.
    in an earlier session), and have them confirm or correct it line by line before any of it reaches
    the core. A memory written for another project is a claim, not a fact — and the ones that sound
    right are the dangerous ones. Anything they don't confirm stays out.
+   **If they let you read their skills in Phase 0,** use them here the same way, after they have
+   answered in their own words. In chat, write a short reading: what the skills suggest about their
+   work, what they care about and what they do again and again, each line naming the skill it rests
+   on. A skill is a claim about them too: they confirm, correct or drop each line, and only
+   confirmed lines reach the core. Keep the list, the reading and their corrections in one
+   AI-written note (for example `Skills_Found.md`), tagged with a privacy tier (personal is the
+   default), whose first line says when to read it: when a new project, skill or routine comes up.
+   Projects the skills point to go to question 7. A skill they already built is a strong hint of
+   the first operation this brain should own, once you have seen the job happen here (see named
+   operations above). If they later say to forget what you learned from their skills, move the
+   note to the quarantine folder and take its lines out of the core.
 3. **Gaps** — specifically what they need help with: finishing things, recall, scattered focus,
    drafting, decisions, remembering people. Concrete needs, not vibes.
 
