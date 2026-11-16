@@ -45,7 +45,7 @@ coding agent, a chat app, something else?"* The answer decides which mechanisms 
 - **Claude Code** — the terminal, or the **Code** tab of the Claude Desktop app — you have
   auto-loaded config, slash-command skills, hooks, and structured questions. Use them. (Claude Code
   also runs in the browser at claude.ai/code against a GitHub repo — no terminal needed; config and
-  skills load there, hooks don't.)
+  the repository's own skills load there; personal skills and hooks don't.)
 - **The Claude tab of the Claude Desktop app** — setup works here too. Your commands run in a small
   Linux machine with the brain folder connected; git is already installed there. Before the first
   commit, ask for permission to delete files in the folder: git removes its own temporary and lock
